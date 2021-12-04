@@ -1,0 +1,21 @@
+{
+  "name": "fski-slider",
+  "version": "1.0.0",
+  "description": "Défilement d'image",
+  "main": "dist/Slider.js",
+  "types": "dist/Slider.d.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build-test": "esbuild tests/test-app.js  --bundle  --outfile=tests/essai/app.js ",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.4.4",
+    "esbuild": "^0.13.14"
+  }
+}
