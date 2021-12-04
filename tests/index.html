@@ -6,25 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test</title>
     <style>
-      .slider {
+      .container {
         position: relative;
-        margin: 3rem;
-        width: 200px;
-        height: 300px;
+        width: 300px;
+
+      }
+
+      .slider {
+        width: 100%;
         display: block;
       }
 
       .slider img {
-        opacity: 0;
         position: absolute;
-        top: 0;
         width: 100%;
+        top: 0; left: 0;
+        opacity: 0;
         z-index: 10;
         transition: opacity 1.5s ease-out;
       }
-      .slider img:nth-child(0) {
-        opacity: 1;
+      .slider img:nth-child(1) {
+        position: relative;
       }
+
       .slider span {
         position: absolute;
         z-index: 20;
@@ -51,7 +55,6 @@
         transform: translateY(-50px);
         transition: transform 1s ease-out;
       }
-      
     </style>
   </head>
   <body>
@@ -59,22 +62,25 @@
       <h1>Test du module fski-slider</h1>
       <br /><br />
       <h2>Tests 1</h2>
-      <div class="slider" >
-        <img src="img/pic1.png" alt="test1" />
-        <img src="img/pic2.png" alt="test2" />
-        <img src="img/pic3.png" alt="test3" />
-        <img src="img/pic4.png"  />
-        <img src="img/pic5.png" alt="reprise test5" />
-        <img src="img/pic6.png" alt="test6" />
+      <div class="container">
+        <div class="slider">
+          <img src="img/pic1.png" alt="test1" />
+          <img src="img/pic2.png" alt="test2" />
+          <img src="img/pic3.png" alt="test3" />
+          <img src="img/pic4.png" />
+          <img src="img/pic5.png" alt="reprise test5" />
+          <img src="img/pic6.png" alt="test6" />
+        </div>
+      </div>
+      <h2>Tests 2</h2>
+      <div class="container">
+        <div class="slider" data-delay="5" data-transition="done">
+          <img src="img/pic1.png" alt="test1" />
+          <img src="img/pic3.png" alt="test3" />
+          <img src="img/pic5.png" alt="reprise test5" data-transition="up" />
+        </div>
       </div>
     </div>
-    <h2>Tests 2</h2>
-    <div class="slider" data-delay="5" data-transition="done">
-      <img src="img/pic1.png" alt="test1" />
-      <img src="img/pic3.png" alt="test3" />
-      <img src="img/pic5.png" alt="reprise test5" data-transition="up" />
-    </div>
-  </div>
     <script src="essai/app.js"></script>
   </body>
 </html>

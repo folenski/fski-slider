@@ -41,52 +41,50 @@ Sur les images, on peut changer la transition
 
 Exemple du style à appliquer pour avoir l'effet 
 ```css
-.slider {
-        position: relative;
-        margin: 3rem;
-        width: 200px;
-        height: 300px;
-        display: block;
-      }
+    .slider {
+      position: relative;
+      width: 300px;
+      display: block;
+    }
 
-      .slider img {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 10;
-        transition: opacity 1.5s ease-out;
-      }
-      .slider img:nth-child(0) {
-        opacity: 1;
-      }
+    .slider img {
+      opacity: 0;
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 10;
+      transition: opacity 1.5s ease-out;
+    }
+    .slider img:nth-child(1) {
+      position: relative;
+    }
 
-      .slider span {
-        position: absolute;
-        z-index: 20;
-      }
-      .slider span.done {
-        font-size: 1.2rem;
-        text-shadow: 1px 1px 4px #888888;
-        font-weight: 600;
+    .slider span {
+      position: absolute;
+      z-index: 20;
+    }
+    .slider span.done {
+      font-size: 1.2rem;
+      text-shadow: 1px 1px 4px #888888;
+      font-weight: 600;
 
-        width: 100%;
-        top: 0;
-        text-align: center;
-        transform: translateY(+50px);
-        transition: transform 1s ease-out;
-      }
-      .slider span.up {
-        font-size: 1rem;
-        color: chartreuse;
-        font-weight: 600;
+      width: 100%;
+      top: 0;
+      text-align: center;
+      transform: translateY(+50px);
+      transition: transform 1s ease-out;
+    }
+    .slider span.up {
+      font-size: 1rem;
+      color: chartreuse;
+      font-weight: 600;
 
-        width: 100%;
-        bottom: 0;
-        text-align: center;
-        transform: translateY(-50px);
-        transition: transform 1s ease-out;
-      }
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+      transform: translateY(-50px);
+      transition: transform 1s ease-out;
+    }
 ```
 
 ## Resources
