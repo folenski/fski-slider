@@ -13,6 +13,7 @@ export class Slider {
   private _imgsIndex = 0;
   private _transitionClass: string[] = new Array();
   timer = 3;
+  timerSpan: number = 0;
   transitionClassDef = "done";
 
   constructor(element: HTMLElement) {
@@ -25,6 +26,10 @@ export class Slider {
 
     if (this.timer == 0) this.timer = 1;
     this.timer *= 1000;
+
+    // calcul du delai pour le texte
+    this.timerSpan = ~~(this.timer * 0.08);
+    this.timerSpan = this.timerSpan > 300 ? 300 : this.timerSpan;
 
     // Transition par défaut
     this.transitionClassDef = element.dataset.transition
@@ -63,7 +68,7 @@ export class Slider {
       this._span.innerHTML = this._imgs[this._current].alt;
       setTimeout(() => {
         this._span.classList.add(this._transitionClass[this._current]);
-      }, 1);
+      }, this.timerSpan);
     }
     // lancement du slide
     window.addEventListener("load", () => {

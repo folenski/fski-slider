@@ -7,6 +7,7 @@
       this._imgsIndex = 0;
       this._transitionClass = new Array();
       this.timer = 3;
+      this.timerSpan = 0;
       this.transitionClassDef = "done";
       this.doInit = (element2) => {
         this._imgs = element2.querySelectorAll("img");
@@ -29,7 +30,7 @@
           this._span.innerHTML = this._imgs[this._current].alt;
           setTimeout(() => {
             this._span.classList.add(this._transitionClass[this._current]);
-          }, 1);
+          }, this.timerSpan);
         }
         window.addEventListener("load", () => {
           setInterval(() => {
@@ -61,6 +62,8 @@
       if (this.timer == 0)
         this.timer = 1;
       this.timer *= 1e3;
+      this.timerSpan = ~~(this.timer * 0.08);
+      this.timerSpan = this.timerSpan > 300 ? 300 : this.timerSpan;
       this.transitionClassDef = element.dataset.transition ? element.dataset.transition : this.transitionClassDef;
       this.doInit(this._element);
     }
