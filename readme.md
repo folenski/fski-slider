@@ -1,8 +1,8 @@
 # fski-slider
 
-## Fonctionnalités
+## Fonctionnalité
 
-- Permet de faire un défilement d'image et affiche le texte de la balise "alt" de l'image
+- Permet d'effectuer un défilement d'images et affiche le texte de l'attribut "alt" de l'image en légende
 
 ## Nagivateurs testés
 
@@ -20,17 +20,15 @@ $ npm install fski-slider
 
 ## Example
 
-Activation en js des animations
+Activation en javascript
 ```js
 import { Slider } from "fski-slider";
 Slider.bind();
-
 ```
 
-Sur la page html, il est nécessaire d'indiquer la class "slider"
-on peut passer 2 paramétres data-delay (en s) et une class de transition pour le texte
+Sur la page html, on doit passer l'attribut data-delay (valeur en seconde) et l'attribut data-transition une classe de transition pour le texte ( facultatif ), la valeur par défaut étant "done".
 
-Sur les images, on peut changer la transition 
+Sur les images, on peut changer la transition par défaut.
 ```html
     <div class="slider" data-delay="5" data-transition="done">
       <img src="img/pic1.png" alt="test1" />
