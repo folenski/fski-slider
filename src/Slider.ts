@@ -1,9 +1,8 @@
 /**
- * Class Slider, permet de générer un défilement des images
+ * Class Slider, permet de générer un défilement d'images
  *
- * ex : Sli = new Slider( document.querySelector(".slider") )
- *
- * le 27/11 - re ecriture en typescript
+ * 27/11/21 - re ecriture en typescript
+ * 12/12/21 - petit changement sur le code
  */
 
 export class Slider {
@@ -18,12 +17,15 @@ export class Slider {
 
   constructor(element: HTMLElement) {
     this._element = element;
+
     // Initialisation du delay
     this.timer = element.dataset.delay
       ? parseInt(element.dataset.delay)
       : this.timer;
+
     if (this.timer == 0) this.timer = 1;
     this.timer *= 1000;
+
     // Transition par défaut
     this.transitionClassDef = element.dataset.transition
       ? element.dataset.transition
@@ -32,7 +34,7 @@ export class Slider {
   }
 
   /**
-   * Initllisation du slider
+   * Initialisation du slider
    *
    * @param element
    * @returns
@@ -93,7 +95,7 @@ export class Slider {
         this._span.innerHTML = texte;
         this._span.style.opacity = "1";
         this._span.classList.add(this._transitionClass[this._current]);
-      }, 300);
+      }, 1);
     }
   };
 

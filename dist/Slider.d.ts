@@ -16,7 +16,7 @@ export declare class Slider {
     transitionClassDef: string;
     constructor(element: HTMLElement);
     /**
-     * Initllisation du slider
+     * Initialisation du slider
      *
      * @param element
      * @returns

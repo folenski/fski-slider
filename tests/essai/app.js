@@ -53,7 +53,7 @@
             this._span.innerHTML = texte;
             this._span.style.opacity = "1";
             this._span.classList.add(this._transitionClass[this._current]);
-          }, 300);
+          }, 1);
         }
       };
       this._element = element;

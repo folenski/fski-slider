@@ -14,7 +14,7 @@ export class Slider {
         this.timer = 3;
         this.transitionClassDef = "done";
         /**
-         * Initllisation du slider
+         * Initialisation du slider
          *
          * @param element
          * @returns
@@ -70,7 +70,7 @@ export class Slider {
                     this._span.innerHTML = texte;
                     this._span.style.opacity = "1";
                     this._span.classList.add(this._transitionClass[this._current]);
-                }, 300);
+                }, 1);
             }
         };
         this._element = element;
