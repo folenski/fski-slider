@@ -30,7 +30,7 @@
           this._span.innerHTML = this._imgs[this._current].alt;
           setTimeout(() => {
             this._span.classList.add(this._transitionClass[this._current]);
-          }, this.timerSpan);
+          }, 1);
         }
         window.addEventListener("load", () => {
           setInterval(() => {
@@ -54,7 +54,7 @@
             this._span.innerHTML = texte;
             this._span.style.opacity = "1";
             this._span.classList.add(this._transitionClass[this._current]);
-          }, 1);
+          }, this.timerSpan);
         }
       };
       this._element = element;
